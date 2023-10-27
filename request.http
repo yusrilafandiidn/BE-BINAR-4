@@ -1,0 +1,98 @@
+### USERS
+### create users
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "yana",
+  "email": "yana@mail.com",
+  "password": "yana",
+  "profile": {
+    "identity_type": "KTP",
+    "identity_number": 123456789,
+    "address": "Jl. satu no. 2"
+  }
+}
+
+### users with pagination
+GET http://localhost:3000/api/v1/users?limit=5&page=1
+
+### all users
+GET http://localhost:3000/api/v1/users
+
+### users detail by id
+GET http://localhost:3000/api/v1/users/1
+
+### Update users by id
+PUT http://localhost:3000/api/v1/users/1
+Content-Type: application/json
+
+{
+  "name": "yana",
+  "email": "yana@mail.com",
+  "password": "yanayuna",
+  "profile": {
+    "identity_type": "KTP",
+    "identity_number": 123456789,
+    "address": "Jl. satu no. 2"
+  }
+}
+
+### delete users
+DELETE http://localhost:3000/api/v1/users/1
+
+### ACCOUNTS
+### create accounts
+POST http://localhost:3000/api/v1/accounts
+Content-Type: application/json
+
+{
+    "user_id": 4,
+    "bank_name": "BCA",
+    "bank_account_number": 987654321,
+    "balance": 50000
+}
+
+### accounts with pagination
+GET http://localhost:3000/api/v1/accounts?limit=5&page=1
+
+### all accounts
+GET http://localhost:3000/api/v1/accounts
+
+### detail accounts by id
+GET http://localhost:3000/api/v1/accounts/4
+
+### update account
+PUT http://localhost:3000/api/v1/accounts/2
+Content-Type: application/json
+
+{
+    "user_id": 2,
+    "bank_name": "BCA",
+    "bank_account_number": 987654321,
+    "balance": 100000
+}
+
+### delete account
+DELETE http://localhost:3000/api/v1/accounts/2
+
+
+### TRANSACTIONS
+### Create Transactions
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "source_account_id": 4,
+  "destination_account_id": 6,
+  "amount": 10000
+}
+
+### data by paginations
+GET http://localhost:3000/api/v1/transactions?limit=2&page=1
+
+### all transactions
+GET http://localhost:3000/api/v1/transactions
+
+### detail transactions by id
+GET http://localhost:3000/api/v1/transactions/1
